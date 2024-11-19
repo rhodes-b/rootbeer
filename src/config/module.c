@@ -1,10 +1,11 @@
 #include "lua_module.h"
+#include "plugins.h" // Defined from CMake; see the PLUGIN_INCLUDES variable in the main CMakeLists.txt file for more info
 
 // We pack all of the lua functions here into a single struct
-// so that they can all be loaded in as a module and called in lua code
-
+// so that they can all be loaded in as a module and called in lua code 
 static const struct luaL_Reg functions[] = {
 	{"debug_test", rb_lua_debug_test},
+	REGISTER // REGISTER is defined from CMake, depends on the plugins included in the build; see the register variable for more info
 	{NULL, NULL}
 };
 
