@@ -1,5 +1,7 @@
 local rb = require('rootbeer')
 rb.debug_test('Hello') -- YIPPEE!
+rb.bar()
+rb.baz()
 
 -- Loop through and print the numbers 1 to 10
 for i = 1, 10 do
