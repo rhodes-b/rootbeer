@@ -1,7 +1,2 @@
-subprojects/*
-!subprojects/*.wrap
-
 .cache/
-
 build/
-
