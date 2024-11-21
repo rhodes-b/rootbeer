@@ -11,6 +11,8 @@ static const struct luaL_Reg functions[] = {
 // Virtual package entrypoint for the package.preload table
 int lua_mod_entrypoint(lua_State *L) {
 	luaL_newlib(L, functions);
+    int x = get_rootbeer_plugin_count();
+    printf("plugins count:%d\n", x);
     // TODO: plugins should end up being their own namespace like rootbeer.plugins 
     // TODO: register the PLUGINS here
 	return 1;
