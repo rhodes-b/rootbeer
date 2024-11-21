@@ -1,5 +1,5 @@
 local rb = require('rootbeer')
-rb.debug_test('Hello') -- YIPPEE!
+-- rb.debug_test('Hello') -- YIPPEE!
 rb.bar()
 rb.baz()
 

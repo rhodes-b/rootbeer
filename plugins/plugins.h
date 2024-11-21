@@ -7,8 +7,5 @@
 #define ROOTBEER_PLUGINS         \
     EXAMPLE_PLUGIN
 
-int get_rootbeer_plugin_count(void);
-
-// we should make a STATUS enum eventually
-int get_rootbeer_plugin(const struct luaL_Reg *plugin, int index);
+void register_rootbeer_plugins(lua_State* L);
 

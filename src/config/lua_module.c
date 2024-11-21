@@ -1,5 +1,5 @@
 #include "lua_module.h"
-#include "plugins.h" // Defined from CMake; see the PLUGIN_INCLUDES variable in the main CMakeLists.txt file for more info
+#include "plugins.h"
 
 // We pack all of the lua functions here into a single struct
 // so that they can all be loaded in as a module and called in lua code 
@@ -11,10 +11,7 @@ static const struct luaL_Reg functions[] = {
 // Virtual package entrypoint for the package.preload table
 int lua_mod_entrypoint(lua_State *L) {
 	luaL_newlib(L, functions);
-    int x = get_rootbeer_plugin_count();
-    printf("plugins count:%d\n", x);
-    // TODO: plugins should end up being their own namespace like rootbeer.plugins 
-    // TODO: register the PLUGINS here
+    register_rootbeer_plugins(L);
 	return 1;
 }
 
